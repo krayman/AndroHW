@@ -1,67 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="30dp"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/textHello"
-        android:fontFamily="sans-serif-condensed-light"
-        android:textSize="40sp"
-        android:textColor="#a0e1b6"
-        android:background="#ea64fe"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="cursive"
-        android:hint="@string/hint_for_edittext"
-        android:textSize="68sp"
-        android:textColorHighlight="#9664fe"
-        />
 
-    <Button
-        android:id="@+id/pretty_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/pretty_button"
-        android:background="#96e45a"
-        />
 
-    <Switch
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/little_switch"
-        />
-
-    <CheckBox
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/checkit"
-        android:background="#cd685a"
-        android:fontFamily="serif-monospace"
-        />
-
-    <ToggleButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Toggler"
-        />
-
-    <CalendarView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

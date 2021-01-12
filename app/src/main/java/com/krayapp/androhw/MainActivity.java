@@ -12,13 +12,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final Button prettyButton = findViewById(R.id.pretty_button);
-        prettyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                prettyButton.setText("Or not :(");
-            }
-        });
     }
 }
