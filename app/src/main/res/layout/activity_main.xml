@@ -4,6 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/asd"
+        />
+
+    <Button
+        android:id="@+id/zeroBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn0"
+        app:layout_constraintStart_toEndOf="@+id/resetbtn"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <Button
+        android:id="@+id/resetbtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:backgroundTint="@color/resetBtnColor"
+        android:text="@string/resetBtn"
+        app:layout_constraintStart_toStartOf="@+id/button7"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
+
+    <Button
+        android:id="@+id/dotBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dotBtnColor"
+        android:text="@string/btnDot"
+        app:layout_constraintStart_toEndOf="@+id/zeroBtn"
+        app:layout_constraintTop_toBottomOf="@+id/button9" />
 
     <Button
         android:id="@+id/button1"
@@ -88,7 +121,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/button8"
+        app:layout_constraintBottom_toBottomOf="@+id/dotBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button3"
@@ -98,7 +131,8 @@
             android:id="@+id/plus_btn"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="3"
+            android:backgroundTint="@color/defaultColor"
             android:text="@string/plsbtn" />
 
         <Button
@@ -106,6 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/defaultColor"
             android:text="@string/equbtn" />
 
     </LinearLayout>
@@ -115,41 +150,52 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@id/button1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/plusEquLayout"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="@id/button1"
+        app:layout_constraintTop_toBottomOf="@+id/resultView">
 
         <Button
-            android:text="@string/resetBtn"
-            android:id="@+id/resetbtn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.7"
-             />
-        <Button
-            android:text="@string/splitbtn"
             android:id="@+id/splitbtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-             />
+            android:backgroundTint="@color/operColor"
+            android:text="@string/splitbtn" />
+
         <Button
-            android:text="@string/minusbtn"
             android:id="@+id/minusbtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-             />
+            android:backgroundTint="@color/operColor"
+            android:text="@string/minusbtn" />
+
         <Button
-            android:text="@string/multbtn"
             android:id="@+id/multibtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-             />
+            android:backgroundTint="@color/operColor"
+            android:text="@string/multbtn" />
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:background="@color/defaultColor"
+
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/operLayout"
+        app:layout_constraintEnd_toEndOf="@+id/operLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/operLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31"
+        app:layout_constraintVertical_chainStyle="packed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

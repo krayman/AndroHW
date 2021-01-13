@@ -15,5 +15,7 @@
     <string name="minusbtn">-</string>
     <string name="splitbtn">/</string>
     <string name="resetBtn">C</string>
+    <string name="btn0">0</string>
+    <string name="btnDot">.</string>
 
 </resources>
