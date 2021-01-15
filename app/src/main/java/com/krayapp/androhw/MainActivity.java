@@ -2,13 +2,19 @@ package com.krayapp.androhw;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private TextView resultView;
+    private TextView historyView;
     private Button button1;
     private Button button2;
     private Button button3;
@@ -25,18 +31,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonSplit;
     private Button buttonReset;
     private Button buttonEqu;
-    private TextView resultView;
-    private TextView historyView;
+
+    CalcLogic calcLogic;
+    private final static String KeyHistory = "history";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initView();
     }
 
     private void initView() {
+        calcLogic = new CalcLogic();
         resultView = findViewById(R.id.resultView);
         historyView = findViewById(R.id.historyView);
         button1 = findViewById(R.id.button1);
@@ -148,11 +155,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resultView.setText("0");
                 break;
             case (R.id.equ_button):
-                equalsMethod(resultView.getText().toString());
+                calcLogic.equalsMethod(resultView.getText().toString());
+                resultView.setText(calcLogic.getResultView());
+                historyView.setText(calcLogic.getHistoryView());
                 break;
         }
     }
-
 
     private void initButton() {
         button1.setOnClickListener(this);
@@ -173,28 +181,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonEqu.setOnClickListener(this);
     }
 
-    private void equalsMethod(String result) {
-        if (result.indexOf('+') != -1) {
-            String[] values = result.split("\\+");
-            Integer value1 = Integer.valueOf(values[0]);
-            Integer value2 = Integer.valueOf(values[1]);
-            resultView.setText(String.format("%s", value1 + value2));
-        }else if(result.indexOf('*') != -1){
-            String[] values = result.split("\\*");
-            Integer value1 = Integer.valueOf(values[0]);
-            Integer value2 = Integer.valueOf(values[1]);
-            resultView.setText(String.format("%s", value1 * value2));
-        }else if(result.indexOf('÷') != -1){
-            String[] values = result.split("÷");
-            Integer value1 = Integer.valueOf(values[0]);
-            Integer value2 = Integer.valueOf(values[1]);
-            resultView.setText(String.format("%s", value1 / value2));
-        }else if(result.indexOf('-') != -1){
-            String[] values = result.split("-");
-            Integer value1 = Integer.valueOf(values[0]);
-            Integer value2 = Integer.valueOf(values[1]);
-            resultView.setText(String.format("%s", value1 - value2));
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if(calcLogic.getResultView() == null){
+            calcLogic.setResultView("0");
         }
-        historyView.append(String.format("%s \n", result));
+        outState.putParcelable(KeyHistory, calcLogic);
+    }
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+
+        super.onRestoreInstanceState(savedInstanceState);
+        calcLogic = savedInstanceState.getParcelable(KeyHistory);
+        setResnHistory(calcLogic.getResultView(), calcLogic.getHistoryView());
+    }
+
+    private void setResnHistory(String result, String history){
+        resultView.setText(String.format("%s",result));
+        historyView.setText(String.format("%s", history));
     }
 }
