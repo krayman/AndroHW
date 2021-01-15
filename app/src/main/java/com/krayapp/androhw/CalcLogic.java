@@ -47,29 +47,30 @@ public class CalcLogic implements Parcelable {
 
     public void equalsMethod(String result) {
         int i = 0;
+        float res;
         if (result.indexOf('+') != -1) {
             String[] values = result.split("\\+");
-            Integer value1 = Integer.valueOf(values[0]);
-            Integer value2 = Integer.valueOf(values[1]);
+            Float value1 = Float.valueOf(values[0]);
+            Float value2 = Float.valueOf(values[1]);
             resultView = String.format("%s", value1 + value2);
             i++;
         } else if (result.indexOf('*') != -1) {
             String[] values = result.split("\\*");
-            Integer value1 = Integer.valueOf(values[0]);
-            Integer value2 = Integer.valueOf(values[1]);
+            Float value1 = Float.valueOf(values[0]);
+            Float value2 = Float.valueOf(values[1]);
             resultView = String.format("%s", value1 * value2);
             i++;
         } else if (result.indexOf('÷') != -1) {
             String[] values = result.split("÷");
-            Integer value1 = Integer.valueOf(values[0]);
-            Integer value2 = Integer.valueOf(values[1]);
+            Float value1 = Float.valueOf(values[0]);
+            Float value2 = Float.valueOf(values[1]);
             resultView = String.format("%s", value1 / value2);
             i++;
         } else if (result.indexOf('-') != -1) {
             String[] values = result.split("-");
-            Integer value1 = Integer.valueOf(values[0]);
-            Integer value2 = Integer.valueOf(values[1]);
-            resultView = String.format("%s", value1 - value2);
+            Float value1 = Float.valueOf(values[0]);
+            Float value2 = Float.valueOf(values[1]);
+            resultView = String.format("%s",(value1 - value2));
             i++;
         } else {
             i = 0;

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="fontsize">30sp</dimen>
+    <dimen name="resultView">70sp</dimen>
+    <dimen name="historySize">30sp</dimen>
     <string name="fontfamily">sans-serif-condensed-light</string>
 </resources>

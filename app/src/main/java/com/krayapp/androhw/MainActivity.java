@@ -2,14 +2,11 @@ package com.krayapp.androhw;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -32,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonReset;
     private Button buttonEqu;
 
+    int resetCount = 0;
     CalcLogic calcLogic;
     private final static String KeyHistory = "history";
 
@@ -152,7 +150,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resultView.append(String.format("%c", '-'));
                 break;
             case (R.id.resetbtn):
-                resultView.setText("0");
+                resetCount++;
+                if(resetCount == 2){
+                    historyView.setText(" ");
+                    resetCount = 0;
+                }else{
+                    resultView.setText("0");
+                }
                 break;
             case (R.id.equ_button):
                 calcLogic.equalsMethod(resultView.getText().toString());
@@ -184,21 +188,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        if(calcLogic.getResultView() == null){
+        if (calcLogic.getResultView() == null) {
             calcLogic.setResultView("0");
         }
         outState.putParcelable(KeyHistory, calcLogic);
     }
+
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-
         super.onRestoreInstanceState(savedInstanceState);
         calcLogic = savedInstanceState.getParcelable(KeyHistory);
         setResnHistory(calcLogic.getResultView(), calcLogic.getHistoryView());
     }
 
-    private void setResnHistory(String result, String history){
-        resultView.setText(String.format("%s",result));
+    private void setResnHistory(String result, String history) {
+        resultView.setText(String.format("%s", result));
         historyView.setText(String.format("%s", history));
     }
 }

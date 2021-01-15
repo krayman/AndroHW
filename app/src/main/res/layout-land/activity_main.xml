@@ -129,7 +129,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/asd" />
 
@@ -218,31 +217,31 @@
 
     <TextView
         android:id="@+id/resultView"
-        android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
+        android:background="@color/defaultColor"
         android:fontFamily="@string/fontfamily"
         android:text="@string/default_value"
         android:textAlignment="textEnd"
-        android:textSize="@dimen/resultView"
+        android:textSize="@dimen/fontsize"
         app:layout_constraintBottom_toTopOf="@+id/operLayout"
         app:layout_constraintEnd_toEndOf="@+id/operLayout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/operLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31"
+        app:layout_constraintVertical_bias="0.120000005"
         app:layout_constraintVertical_chainStyle="packed" />
+
     <TextView
         android:id="@+id/historyView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="textEnd"
-        android:fontFamily="@string/fontfamily"
-        android:textSize="@dimen/historySize"
         app:layout_constraintBottom_toTopOf="@+id/resultView"
-        app:layout_constraintEnd_toEndOf="@+id/resultView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
+        app:layout_constraintVertical_bias="0.75" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
