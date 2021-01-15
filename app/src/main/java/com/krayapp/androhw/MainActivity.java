@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonEqu;
 
     int resetCount = 0;
+    int eqCounter = 0;
     CalcLogic calcLogic;
     private final static String KeyHistory = "history";
 
@@ -66,76 +67,97 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("DefaultLocale")
     @Override
     public void onClick(View view) {
+
         switch (view.getId()) {
             case (R.id.button1):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 1));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 1));
                 }
+                resetCount = 0;
                 break;
             case (R.id.button2):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 2));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 2));
                 }
+                resetCount = 0;
                 break;
             case (R.id.button3):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 3));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 3));
                 }
+                resetCount = 0;
                 break;
             case (R.id.button4):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 4));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 4));
                 }
+                resetCount = 0;
                 break;
             case (R.id.button5):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 5));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 5));
                 }
+                resetCount = 0;
                 break;
             case (R.id.button6):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 6));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 6));
                 }
+                resetCount = 0;
                 break;
             case (R.id.button7):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 7));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 7));
                 }
+                resetCount = 0;
                 break;
             case (R.id.button8):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 8));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 8));
                 }
+                resetCount = 0;
                 break;
             case (R.id.button9):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 9));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 9));
                 }
+                resetCount = 0;
                 break;
             case (R.id.button0):
-                if (resultView.getText().toString().equals("0")) {
+                if (resultView.getText().toString().equals("0") || eqCounter > 0) {
                     resultView.setText(String.format("%d", 0));
+                    eqCounter = 0;
                 } else {
                     resultView.append(String.format("%d", 0));
                 }
+                resetCount = 0;
                 break;
             case (R.id.multibtn):
                 resultView.append(String.format("%c", '*'));
@@ -151,14 +173,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case (R.id.resetbtn):
                 resetCount++;
-                if(resetCount == 2){
+                eqCounter = 0;
+                if (resetCount == 2) {
                     historyView.setText(" ");
+                    calcLogic.setHistoryView(" ");
                     resetCount = 0;
-                }else{
-                    resultView.setText("0");
                 }
+                resultView.setText("0");
+                calcLogic.res = 0;
+
+                calcLogic.setResultView(" ");
                 break;
             case (R.id.equ_button):
+                eqCounter++;
                 calcLogic.equalsMethod(resultView.getText().toString());
                 resultView.setText(calcLogic.getResultView());
                 historyView.setText(calcLogic.getHistoryView());

@@ -6,6 +6,7 @@ import android.os.Parcelable;
 public class CalcLogic implements Parcelable {
     String resultView;
     String historyView = " ";
+    float res;
 
 
     protected CalcLogic(Parcel in) {
@@ -46,37 +47,57 @@ public class CalcLogic implements Parcelable {
     }
 
     public void equalsMethod(String result) {
-        int i = 0;
-        float res;
+        int i = 0; //задание счетчика одного числа
         if (result.indexOf('+') != -1) {
             String[] values = result.split("\\+");
+            if (values.length < 2){
+                resultView = "0";
+                return;
+            }
             Float value1 = Float.valueOf(values[0]);
             Float value2 = Float.valueOf(values[1]);
-            resultView = String.format("%s", value1 + value2);
+            res = value1 + value2;
             i++;
         } else if (result.indexOf('*') != -1) {
             String[] values = result.split("\\*");
+            if (values.length < 2){
+                resultView = "0";
+                return;
+            }
             Float value1 = Float.valueOf(values[0]);
             Float value2 = Float.valueOf(values[1]);
-            resultView = String.format("%s", value1 * value2);
+            res = value1 * value2;
             i++;
         } else if (result.indexOf('÷') != -1) {
             String[] values = result.split("÷");
+            if (values.length < 2){
+                resultView = "0";
+                return;
+            }
             Float value1 = Float.valueOf(values[0]);
             Float value2 = Float.valueOf(values[1]);
-            resultView = String.format("%s", value1 / value2);
+            res = value1 / value2;
             i++;
         } else if (result.indexOf('-') != -1) {
             String[] values = result.split("-");
+            if (values.length < 2){
+                resultView = "0";
+                return;
+            }
             Float value1 = Float.valueOf(values[0]);
             Float value2 = Float.valueOf(values[1]);
-            resultView = String.format("%s",(value1 - value2));
+            res = value1 - value2;
             i++;
         } else {
             i = 0;
         }
-        if (i != 0) {
+        if (i != 0) { //соло числа не записываются в историю
             historyView += String.format("%s \n", result);
+        }
+        if (res % 1 == 0) {
+            resultView = String.format("%s", (int) res);
+        } else {
+            resultView = String.format("%s", res);
         }
     }
 
