@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">AndroHW</string>
+    <string name="app_name">IRG Calculator</string>
+    <string name="btn1">1</string>
+    <string name="btn2">2</string>
+    <string name="btn3">3</string>
+    <string name="btn4">4</string>
+    <string name="btn5">5</string>
+    <string name="btn6">6</string>
+    <string name="btn7">7</string>
+    <string name="btn8">8</string>
+    <string name="btn9">9</string>
+    <string name="plsbtn">+</string>
+    <string name="equbtn">=</string>
+    <string name="multbtn">X</string>
+    <string name="minusbtn">-</string>
+    <string name="splitbtn">÷</string>
+    <string name="resetBtn">C</string>
+    <string name="btn0">0</string>
+    <string name="btnDot">.</string>
+    <string name="default_value">0</string>
+
 </resources>
