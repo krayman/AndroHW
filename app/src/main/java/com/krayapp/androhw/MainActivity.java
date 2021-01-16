@@ -160,15 +160,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resetCount = 0;
                 break;
             case (R.id.multibtn):
+                eqCounter = 0;
                 resultView.append(String.format("%c", '*'));
                 break;
             case (R.id.splitbtn):
+                eqCounter = 0;
                 resultView.append(String.format("%c", '÷'));
                 break;
             case (R.id.plus_btn):
+                eqCounter = 0;
                 resultView.append(String.format("%c", '+'));
                 break;
             case (R.id.minusbtn):
+                eqCounter = 0;
                 resultView.append(String.format("%c", '-'));
                 break;
             case (R.id.resetbtn):

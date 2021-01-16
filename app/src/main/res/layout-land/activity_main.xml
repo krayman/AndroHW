@@ -220,7 +220,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
-        android:background="@color/defaultColor"
         android:fontFamily="@string/fontfamily"
         android:text="@string/default_value"
         android:textAlignment="textEnd"

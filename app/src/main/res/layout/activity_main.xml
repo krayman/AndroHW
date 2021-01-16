@@ -130,6 +130,7 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/asd" />
 
@@ -193,7 +194,8 @@
             android:backgroundTint="@color/operColor"
             android:fontFamily="@string/fontfamily"
             android:text="@string/splitbtn"
-            android:textSize="@dimen/fontsize" />
+            android:textSize="@dimen/fontsize"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/minusbtn"
