@@ -10,20 +10,47 @@
         <item name="android:fontFamily">@string/fontfamily</item>
         <item name="android:textSize">@dimen/fontsize</item>
         <item name="android:backgroundTint">@color/colorPrimary</item>
-        <item name="android:insetRight">@dimen/default_rightInset</item> //не работает :(
+        <item name="android:insetRight">@dimen/default_rightInset</item>
+        //не работает :(
     </style>
 
     <style name="defaultButtonLandStyle">
         <item name="android:fontFamily">@string/fontfamily</item>
         <item name="android:textSize">@dimen/landfontsize</item>
         <item name="android:backgroundTint">@color/colorPrimary</item>
-        <item name="android:insetRight">@dimen/default_rightInset</item> //не работает :(
+        <item name="android:insetRight">@dimen/default_rightInset</item>
+        //не работает :(
         <item name="android:minHeight">@dimen/minHeightBtn</item>
+    </style>
+
+
+    <style name="defaultButtonVerticalStyleNight">
+        <item name="android:fontFamily">@string/fontfamily</item>
+        <item name="android:textSize">@dimen/fontsize</item>
+        <item name="android:backgroundTint">@color/colorPrimaryDark</item>
+        <item name="android:insetRight">@dimen/default_rightInset</item>
+        //не работает :(
+        <item name="colorOnPrimary">@color/nightTextColor</item>
+
+    </style>
+
+    <style name="defaultButtonLandStyleNight">
+        <item name="android:fontFamily">@string/fontfamily</item>
+        <item name="android:textSize">@dimen/landfontsize</item>
+        <item name="android:backgroundTint">@color/colorPrimaryDark</item>
+        <item name="android:insetRight">@dimen/default_rightInset</item>
+        //не работает :(
+        <item name="android:minHeight">@dimen/minHeightBtn</item>
+        <item name="colorOnPrimary">@color/nightTextColor</item>
     </style>
 
     <style name="plusStyle">
         <item name="android:backgroundTint">@color/plusColor</item>
     </style>
+    <style name="plusStyleNight">
+        <item name="android:backgroundTint">@color/plusColorNight</item>
+    </style>
+
 
     <style name="operStyle">
         <item name="android:backgroundTint">@color/operColor</item>
@@ -31,13 +58,30 @@
         <item name="android:textSize">@dimen/landfontsize</item>
     </style>
 
+    <style name="operStyleNight">
+        <item name="android:backgroundTint">@color/operColorNight</item>
+        <item name="android:minHeight">@dimen/minHeightBtn</item>
+        <item name="android:textSize">@dimen/landfontsize</item>
+    </style>
+
+
     <style name="resetStyle">
         <item name="android:backgroundTint">@color/resetBtnColor</item>
         <item name="android:text">@string/resetBtn</item>
     </style>
 
+    <style name="resetStyleNight">
+        <item name="android:backgroundTint">@color/resetBtnColorNight</item>
+        <item name="android:text">@string/resetBtn</item>
+    </style>
+
     <style name="dotStyle">
         <item name="android:backgroundTint">@color/dotBtnColor</item>
+        <item name="android:text">@string/btnDot</item>
+    </style>
+
+    <style name="dotStyleNight">
+        <item name="android:backgroundTint">@color/dotBtnColorNight</item>
         <item name="android:text">@string/btnDot</item>
     </style>
 
@@ -59,6 +103,25 @@
         <item name="android:textColor">@color/lightTextColor</item>
     </style>
 
+    <style name="resultViewStyleNight">
+        <item name="android:layout_margin">50dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:text">@string/default_value</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/resultView</item>
+        <item name="android:textColor">@color/nightTextColor</item>
+    </style>
+
+    <style name="resultLandViewStyleNight">
+        <item name="android:layout_margin">50dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:text">@string/default_value</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/resultLandView</item>
+        <item name="android:textColor">@color/nightTextColor</item>
+    </style>
+
+
     <style name="historyViewStyle">
         <item name="android:textAlignment">textEnd</item>
         <item name="android:textSize">@dimen/historySize</item>
@@ -70,4 +133,18 @@
         <item name="android:textSize">@dimen/historySize</item>
         <item name="android:textColor">@color/lightTextColor</item>
     </style>
+
+    <style name="historyViewStyleNight">
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/historySize</item>
+        <item name="android:textColor">@color/nightTextColor</item>
+    </style>
+
+    <style name="historyLandViewStyleNight">
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">@dimen/historySize</item>
+        <item name="android:textColor">@color/nightTextColor</item>
+    </style>
+
+
 </resources>
