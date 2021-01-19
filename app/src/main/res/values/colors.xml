@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="resetBtnColor">#ff767f</color>
-    <color name="defaultColor">#ffca7f</color>
+    <color name="plusColor">#ffca7f</color>
     <color name="operColor">#8495ef</color>
     <color name="dotBtnColor">#84e0ef</color>
 
