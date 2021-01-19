@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/MyCalcStyle">
+    android:theme="@style/defaultButtonStyle">
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,6 +15,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button8" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/resetbtn"
         style="@style/resetStyle"
         android:layout_width="0dp"
@@ -23,6 +25,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button7" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/dotBtn"
         style="@style/dotStyle"
         android:layout_width="wrap_content"
@@ -31,6 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button9" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +46,7 @@
         app:layout_constraintTop_toBottomOf="@id/operLayout" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,6 +56,7 @@
         app:layout_constraintTop_toTopOf="@+id/button1" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,6 +67,7 @@
         app:layout_constraintTop_toTopOf="@+id/button2" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,6 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button1" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,6 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,6 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,6 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,7 +111,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button9"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
 
-   <!-- <androidx.appcompat.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -108,9 +119,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/asd" />-->
+        app:srcCompat="@drawable/asd" />
 
     <com.google.android.material.button.MaterialButton
+        android:insetRight="@dimen/default_rightInset"
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -131,6 +143,7 @@
         app:layout_constraintTop_toTopOf="@+id/button1">
 
         <com.google.android.material.button.MaterialButton
+            android:insetRight="@dimen/default_rightInset"
             android:id="@+id/plus_btn"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -138,6 +151,7 @@
             android:text="@string/plsbtn" />
 
         <com.google.android.material.button.MaterialButton
+            android:insetRight="@dimen/default_rightInset"
             android:id="@+id/equ_button"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -157,6 +171,7 @@
         app:layout_constraintTop_toBottomOf="@+id/resultView">
 
         <com.google.android.material.button.MaterialButton
+            android:insetRight="@dimen/default_rightInset"
             android:id="@+id/splitbtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -164,6 +179,7 @@
             android:text="@string/splitbtn" />
 
         <com.google.android.material.button.MaterialButton
+            android:insetRight="@dimen/default_rightInset"
             android:id="@+id/minusbtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -171,6 +187,7 @@
             android:text="@string/minusbtn" />
 
         <com.google.android.material.button.MaterialButton
+            android:insetRight="@dimen/default_rightInset"
             android:id="@+id/multibtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -180,9 +197,9 @@
 
     <TextView
         android:id="@+id/resultView"
-        style="@style/resultViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/resultViewStyle"
         app:layout_constraintBottom_toTopOf="@+id/operLayout"
         app:layout_constraintEnd_toEndOf="@+id/operLayout"
         app:layout_constraintHorizontal_bias="0.5"
@@ -192,10 +209,10 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        style="@style/historyViewStyle"
         android:id="@+id/historyView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/historyViewStyle"
         app:layout_constraintBottom_toTopOf="@+id/resultView"
         app:layout_constraintEnd_toEndOf="@+id/resultView"
         app:layout_constraintTop_toTopOf="parent"
