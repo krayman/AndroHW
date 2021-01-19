@@ -1,15 +1,8 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="MyCalcStyle" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="MyCalcStyle" parent="Theme.MaterialComponents">
         <item name="android:fontFamily">@string/fontfamily</item>
         <item name="android:textSize">@dimen/fontsize</item>
+        <item name="android:insetRight">10dp</item>
     </style>
 
     <style name="plusStyle">
