@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/defaultButtonVerticalStyle">
+    android:theme="@style/defaultButtonVerticalStyleNight">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/light" />
+        app:srcCompat="@drawable/night" />
 
     <com.google.android.material.button.MaterialButton
         android:insetRight="@dimen/default_rightInset"
@@ -24,7 +24,7 @@
     <com.google.android.material.button.MaterialButton
         android:insetRight="@dimen/default_rightInset"
         android:id="@+id/resetbtn"
-        style="@style/resetStyle"
+        style="@style/resetStyleNight"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.7"
@@ -34,7 +34,7 @@
     <com.google.android.material.button.MaterialButton
         android:insetRight="@dimen/default_rightInset"
         android:id="@+id/dotBtn"
-        style="@style/dotStyle"
+        style="@style/dotStyleNight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/button0"
@@ -133,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:theme="@style/plusStyle"
+        android:theme="@style/plusStyleNight"
         app:layout_constraintBottom_toBottomOf="@+id/dotBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -162,7 +162,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:theme="@style/operStyle"
+        android:theme="@style/operStyleNight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/plusEquLayout"
         app:layout_constraintStart_toStartOf="@id/button1"
@@ -197,7 +197,7 @@
         android:id="@+id/resultView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/resultViewStyle"
+        style="@style/resultViewStyleNight"
         app:layout_constraintBottom_toTopOf="@+id/operLayout"
         app:layout_constraintEnd_toEndOf="@+id/operLayout"
         app:layout_constraintHorizontal_bias="0.5"
@@ -210,7 +210,7 @@
         android:id="@+id/historyView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/historyViewStyle"
+        style="@style/historyViewStyleNight"
         app:layout_constraintBottom_toTopOf="@+id/resultView"
         app:layout_constraintEnd_toEndOf="@+id/resultView"
         app:layout_constraintTop_toTopOf="parent"

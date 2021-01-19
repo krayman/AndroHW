@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#ECD6D2</color>
+    <color name="colorPrimaryDark">#656F83</color>
     <color name="resetBtnColor">#ff767f</color>
-    <color name="defaultColor">#ffca7f</color>
+    <color name="plusColor">#ffca7f</color>
     <color name="operColor">#8495ef</color>
     <color name="dotBtnColor">#84e0ef</color>
+    <color name="lightTextColor">#655D5B</color>
+    <color name="nightTextColor">#E2D8D6</color>
+
+    <color name="resetBtnColorNight">#950000</color>
+    <color name="plusColorNight">#C47D31</color>
+    <color name="operColorNight">#45537B</color>
+    <color name="dotBtnColorNight">#009B91</color>
 
 </resources>
