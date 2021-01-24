@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,13 +35,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int resetCount = 0;
     int eqCounter = 0;
     private CalcLogic calcLogic = new CalcLogic();
+    private ThemeChangerActivity themeChangerActivity = new ThemeChangerActivity();
     private final static String keyHistory = "history";
     private final static int THEME_KEY = 777;
-
+    final static String THEME = "THEME";
+    private static int CURRENT_THEME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (CURRENT_THEME == 0) {
+            Toast.makeText(this, "Light", Toast.LENGTH_SHORT).show();
+            setTheme(R.style.MyCalcStyleLight);
+        } else {
+            Toast.makeText(this, "Dark", Toast.LENGTH_SHORT).show();
+            setTheme(R.style.MyCalcStyleDark);
+        }
         setContentView(R.layout.activity_main);
         initView();
     }
@@ -209,8 +219,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             super.onActivityResult(requestCode, resultCode, data);
             return;
         }
-        if (requestCode == RESULT_OK) {
-
+        if (resultCode == RESULT_OK) {
+            CURRENT_THEME = data.getExtras().getInt(THEME);
+            recreate();
         }
     }
 
