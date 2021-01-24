@@ -6,8 +6,15 @@ import android.os.Parcelable;
 public class CalcLogic implements Parcelable {
     String resultView;
     String historyView = " ";
-    float res;
+    private float res;
 
+    public float getRes() {
+        return res;
+    }
+
+    public void setRes(float res) {
+        this.res = res;
+    }
 
     protected CalcLogic(Parcel in) {
         resultView = in.readString();
@@ -111,5 +118,6 @@ public class CalcLogic implements Parcelable {
         parcel.writeString(resultView);
         parcel.writeString(historyView);
     }
+
 }
 

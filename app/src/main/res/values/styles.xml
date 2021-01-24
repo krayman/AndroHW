@@ -1,15 +1,43 @@
 <resources>
 
-    <style name="MyCalcStyle" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="MyCalcStyleLight" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:fontFamily">@string/fontfamily</item>
         <item name="android:textSize">@dimen/fontsize</item>
         <item name="android:colorControlNormal">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/lightTextColor</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="srcCompat">@drawable/light</item>
     </style>
+
+    <style name="MyCalcStyleDark" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:fontFamily">@string/fontfamily</item>
+        <item name="android:textSize">@dimen/fontsize</item>
+        <item name="android:colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/nightTextColor</item>
+        <item name="android:backgroundTint">@color/colorPrimaryDark</item>
+        <item name="srcCompat">@drawable/night</item>
+        <item name="colorOnPrimary">@color/nightTextColor</item>
+    </style>
+
 
     <style name="defaultButtonVerticalStyle">
         <item name="android:fontFamily">@string/fontfamily</item>
         <item name="android:textSize">@dimen/fontsize</item>
         <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:insetRight">@dimen/default_rightInset</item>
+        //не работает :(
+    </style>
+
+    <style name="defaultButtonVerticalStyleNight">
+        <item name="android:fontFamily">@string/fontfamily</item>
+        <item name="android:textSize">@dimen/fontsize</item>
+        <item name="android:backgroundTint">@color/colorPrimaryDark</item>
         <item name="android:insetRight">@dimen/default_rightInset</item>
         //не работает :(
     </style>
@@ -24,16 +52,6 @@
     </style>
 
 
-    <style name="defaultButtonVerticalStyleNight">
-        <item name="android:fontFamily">@string/fontfamily</item>
-        <item name="android:textSize">@dimen/fontsize</item>
-        <item name="android:backgroundTint">@color/colorPrimaryDark</item>
-        <item name="android:insetRight">@dimen/default_rightInset</item>
-        //не работает :(
-        <item name="colorOnPrimary">@color/nightTextColor</item>
-
-    </style>
-
     <style name="defaultButtonLandStyleNight">
         <item name="android:fontFamily">@string/fontfamily</item>
         <item name="android:textSize">@dimen/landfontsize</item>
@@ -47,6 +65,7 @@
     <style name="plusStyle">
         <item name="android:backgroundTint">@color/plusColor</item>
     </style>
+
     <style name="plusStyleNight">
         <item name="android:backgroundTint">@color/plusColorNight</item>
     </style>
@@ -146,5 +165,10 @@
         <item name="android:textColor">@color/nightTextColor</item>
     </style>
 
+    <style name="settingStyle">
+        <item name="android:textSize">10sp</item>
+        <item name="android:minHeight">@dimen/minHeightBtn</item>
+        <item name="android:backgroundTint">@color/settingsColor</item>
+    </style>
 
 </resources>
