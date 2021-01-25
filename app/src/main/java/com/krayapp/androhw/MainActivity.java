@@ -1,10 +1,12 @@
 package com.krayapp.androhw;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,21 +30,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonSplit;
     private Button buttonReset;
     private Button buttonEqu;
+    private Button buttonSettings;
 
     int resetCount = 0;
     int eqCounter = 0;
-    CalcLogic calcLogic;
-    private final static String KeyHistory = "history";
+    private CalcLogic calcLogic = new CalcLogic();
+    private ThemeChangerActivity themeChangerActivity = new ThemeChangerActivity();
+    private final static String keyHistory = "history";
+    private final static int THEME_KEY = 777;
+    final static String THEME = "THEME";
+    private static int CURRENT_THEME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (CURRENT_THEME == 0) {
+            Toast.makeText(this, "Light", Toast.LENGTH_SHORT).show();
+            setTheme(R.style.MyCalcStyleLight);
+        } else {
+            Toast.makeText(this, "Dark", Toast.LENGTH_SHORT).show();
+            setTheme(R.style.MyCalcStyleDark);
+        }
         setContentView(R.layout.activity_main);
         initView();
     }
 
     private void initView() {
-        calcLogic = new CalcLogic();
         resultView = findViewById(R.id.resultView);
         historyView = findViewById(R.id.historyView);
         button1 = findViewById(R.id.button1);
@@ -61,7 +74,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSplit = findViewById(R.id.splitbtn);
         buttonReset = findViewById(R.id.resetbtn);
         buttonEqu = findViewById(R.id.equ_button);
-        initButton();
+        buttonSettings = findViewById(R.id.setting_button);
+        setClickButtons();
     }
 
     @SuppressLint("DefaultLocale")
@@ -184,8 +198,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     resetCount = 0;
                 }
                 resultView.setText("0");
-                calcLogic.res = 0;
-
+                calcLogic.setRes(0);
                 calcLogic.setResultView(" ");
                 break;
             case (R.id.equ_button):
@@ -194,10 +207,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resultView.setText(calcLogic.getResultView());
                 historyView.setText(calcLogic.getHistoryView());
                 break;
+            case (R.id.setting_button):
+                Intent settingsActivity = new Intent(this, ThemeChangerActivity.class);
+                startActivityForResult(settingsActivity, THEME_KEY);
         }
     }
 
-    private void initButton() {
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode != THEME_KEY) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+        if (resultCode == RESULT_OK) {
+            CURRENT_THEME = data.getExtras().getInt(THEME);
+            recreate();
+        }
+    }
+
+    private void setClickButtons() {
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
@@ -214,6 +242,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSplit.setOnClickListener(this);
         buttonReset.setOnClickListener(this);
         buttonEqu.setOnClickListener(this);
+        buttonSettings.setOnClickListener(this);
     }
 
     @Override
@@ -222,13 +251,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (calcLogic.getResultView() == null) {
             calcLogic.setResultView("0");
         }
-        outState.putParcelable(KeyHistory, calcLogic);
+        outState.putParcelable(keyHistory, calcLogic);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        calcLogic = savedInstanceState.getParcelable(KeyHistory);
+        calcLogic = savedInstanceState.getParcelable(keyHistory);
+        assert calcLogic != null;
         setResnHistory(calcLogic.getResultView(), calcLogic.getHistoryView());
     }
 
